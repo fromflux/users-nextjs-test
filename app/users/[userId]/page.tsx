@@ -2,16 +2,17 @@ import { Item, ItemContent, ItemHeader, ItemTitle } from "@/components/ui/item";
 import { TUserDTO } from "../types";
 import { countries } from "@/lib/world-countries-json/countries";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Field, FieldContent, FieldDescription, FieldGroup, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field";
+import { Field, FieldContent, FieldGroup, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field";
+
 
 export default async function UserDetailPage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params
 
-  const res = fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${userId}`);
-  if (!(await res).ok) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${userId}`);
+  if (!res.ok) {
     throw new Error(`Failed to fetch user for id: ${userId}`);
   }
-  const user = await (await res).json() as TUserDTO;
+  const user = await res.json() as TUserDTO;
 
   const country = countries.find(country => country.isoAlpha3 === user.country);
 

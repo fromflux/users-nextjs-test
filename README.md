@@ -6,11 +6,27 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
+Setup ENV file
 
 ```bash
-npm run dev
+cp .env.example .env
 ```
+
+Build the application:
+
+```bash
+npm run build
+```
+
+Run the server:
+
+```bash
+npm start
+```
+
+Open the application in the browser:
+
+http://localhost:3000
 
 ## Libraries and Patterns
 
