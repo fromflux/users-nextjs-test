@@ -32,11 +32,7 @@ export default function AddUserForm() {
   });
 
   async function onSubmit(formData: z.infer<typeof addUserFromSchema>) {
-    console.log('onSubmit', formData)
-
     const res = await addUser(formData);
-
-    console.log('res', res)
 
     if (res.success) {
       form.reset();
@@ -192,7 +188,7 @@ export default function AddUserForm() {
               />
             </div>
 
-            {form.formState.isDirty || form.formState.isSubmitted && form.control.getFieldState('interests').error && (
+            {(form.formState.isDirty || form.formState.isSubmitted) && form.control.getFieldState('interests').error && (
               <FieldError errors={[{ message: form.control.getFieldState('interests').error?.message }]} />
             )}
 
