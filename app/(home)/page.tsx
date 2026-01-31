@@ -7,7 +7,7 @@ export default async function Home() {
       <Card>
         <CardHeader>
           <CardTitle>
-            <h1>Add a user</h1>
+            <h1 className="text-xl font-semibold">Add a user</h1>
           </CardTitle>
         </CardHeader>
         <CardContent>

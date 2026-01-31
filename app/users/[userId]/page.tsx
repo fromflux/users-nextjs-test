@@ -17,9 +17,10 @@ export default async function UserDetailPage({ params }: { params: Promise<{ use
 
   return (
     <div className="container mx-auto px-4 my-6">
+      <h1 className="text-xl font-semibold mb-6">User Details</h1>
       <Item variant="outline">
         <ItemHeader>
-          <ItemTitle className="text-2xl font-semibold">{user.fullname}</ItemTitle>
+          <ItemTitle className="text-xl font-semibold">{user.fullname}</ItemTitle>
         </ItemHeader>
         <ItemContent className="flex flex-col gap-3">
 

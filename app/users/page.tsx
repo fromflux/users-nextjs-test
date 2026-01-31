@@ -12,6 +12,7 @@ export default async function users() {
 
   return (
     <div className="container mx-auto px-4 my-6">
+      <h1 className="text-xl font-semibold mb-6">Users</h1>
       <ul className="flex flex-col gap-4">
         {users.map(user => (
           <li key={user.id}>
