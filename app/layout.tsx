@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,18 +41,25 @@ export default function RootLayout({
           ${geistSans.variable} ${geistMono.variable} antialiased min-h-screen
         `}
       >
-        <header className="w-full py-3 px-5 bg-primary">
-          <nav className="flex gap-5 text-white font-bold">
-            <Link className="hover:underline underline-offset-4" href={'/'}>Home</Link>
-            <Link className="hover:underline underline-offset-4" href={'/users'}>Users</Link>
-          </nav>
-        </header>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="w-full py-3 px-5 bg-primary">
+            <nav className="flex gap-5 text-white font-bold">
+              <Link className="hover:underline underline-offset-4" href={'/'}>Home</Link>
+              <Link className="hover:underline underline-offset-4" href={'/users'}>Users</Link>
+            </nav>
+          </header>
 
-        <main className="flex w-full max-w-5xl mx-auto flex-col py-6 px-3">
-          {children}
-        </main>
+          <main className="flex w-full max-w-5xl mx-auto flex-col py-6 px-3">
+            {children}
+          </main>
 
-        <Toaster position="top-center" richColors />
+          <Toaster position="top-center" richColors />
+        </ThemeProvider>
       </body>
     </html>
   );
