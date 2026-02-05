@@ -116,7 +116,7 @@ export default function AddUserForm() {
               <Controller
                 control={form.control}
                 name='interests.coding'
-                render={({ field: { value, onChange, ...field }, fieldState }) => (
+                render={({ field: { value, onChange, ...field } }) => (
                   <Field data-invalid={form.control.getFieldState('interests').invalid} orientation='horizontal'>
                     <Checkbox
                       id={field.name}
@@ -135,7 +135,7 @@ export default function AddUserForm() {
               <Controller
                 control={form.control}
                 name='interests.music'
-                render={({ field: { value, onChange, ...field }, fieldState }) => (
+                render={({ field: { value, onChange, ...field } }) => (
                   <Field data-invalid={form.control.getFieldState('interests').invalid} orientation='horizontal'>
                     <Checkbox
                       id={field.name}
@@ -154,7 +154,7 @@ export default function AddUserForm() {
               <Controller
                 control={form.control}
                 name='interests.reading'
-                render={({ field: { value, onChange, ...field }, fieldState }) => (
+                render={({ field: { value, onChange, ...field } }) => (
                   <Field data-invalid={form.control.getFieldState('interests').invalid} orientation='horizontal'>
                     <Checkbox
                       id={field.name}
@@ -173,7 +173,7 @@ export default function AddUserForm() {
               <Controller
                 control={form.control}
                 name='interests.sports'
-                render={({ field: { value, onChange, ...field }, fieldState }) => (
+                render={({ field: { value, onChange, ...field } }) => (
                   <Field data-invalid={form.control.getFieldState('interests').invalid} orientation='horizontal'>
                     <Checkbox
                       id={field.name} {...field}

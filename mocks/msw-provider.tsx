@@ -30,7 +30,7 @@ export default function MswProvider({
     };
 
     f();
-  }, []);
+  }, [isMockingEnabled]);
 
   if (isMockingEnabled && !isMockReady) {
     console.info("Waiting for browser mock service with MSW to be ready...");

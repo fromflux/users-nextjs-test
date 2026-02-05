@@ -4,7 +4,6 @@ import { countries } from "@/lib/world-countries-json/countries";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldContent, FieldGroup, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field";
 
-
 export default async function UserDetailPage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params
 
